@@ -14,6 +14,7 @@ Each IFILE entry is examinated in order to find PDB Net Service entries.
 Please note: the script does not look up PDB Net Service entries in the top-level tnsnames.ora
 file, but only in the inlcuded files referenced by the IFILE records in the top-level tnsnames.ora
 
+```
 USAGE:
   mk_oracle_tns.sh [OPTIONS]
 
@@ -54,13 +55,16 @@ CONFIGURATION:
 
   MK_ORA_LOGGING        "true | false" same as '-l | --log", manages execution steps
                         logging into mk_oracle_tns.log
+```
 
 ### Example Output:
 
-# ./mk_oracle_tns.sh
+```
+./mk_oracle_tns.sh
 1 "PDB1" - Oracle PDB 'PDB1' status 'READ ONLY'
 0 "PDB2" - Oracle PDB 'PDB2' status OK (READ WRITE)
 2 "PDB3" - Oracle PDB 'PDB3' status 'ERROR: ORA-12514: TNS:listener does not currently know of service requested in connect descriptor   '
+```
 
 ### Known limitations:
 
