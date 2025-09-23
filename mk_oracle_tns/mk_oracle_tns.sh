@@ -314,7 +314,11 @@ EOM
 
 read_pdb_status() {
 
-    TNS_ADMIN="$ORACLE_HOME/network/admin/"
+    if [[ "x" = "x${TNS_ADMIN}" ]]; then
+        TNS_ADMIN="$ORACLE_HOME/network/admin/"
+    else
+        export TNS_ADMIN
+    fi
 
     if [[ ! -d "$TNS_ADMIN" ]]; then
 
